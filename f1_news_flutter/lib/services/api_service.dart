@@ -8,7 +8,7 @@ import 'source_storage_service.dart';
 
 class ApiService extends ChangeNotifier {
   // 開発時は 10.0.2.2 (Androidエミュレータ→ホスト)、本番では実サーバーURLに変更
-  static const String _baseUrl = 'http://localhost:8000/api/v1';
+  static const String _baseUrl = 'https://f1-news-backend.onrender.com/api/v1';
 
   final _storage = SourceStorageService();
 
