@@ -1,0 +1,40 @@
+name: f1_news_app
+description: F1ニュースアプリ - 各社記事一覧とAIまとめ
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ネットワーク
+  http: ^1.2.2
+
+  # 画像キャッシュ
+  cached_network_image: ^3.4.1
+
+  # 広告 (Google AdMob)
+  google_mobile_ads: ^5.1.0
+
+  # 外部ブラウザでURL開く
+  url_launcher: ^6.3.0
+
+  # 日付フォーマット
+  intl: ^0.19.0
+
+  # 状態管理
+  provider: ^6.1.2
+
+  # ローカルストレージ (カスタムソース保存)
+  shared_preferences: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
