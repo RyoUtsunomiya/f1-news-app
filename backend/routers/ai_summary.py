@@ -14,9 +14,13 @@ _cache: TTLCache = TTLCache(maxsize=5, ttl=3600)
 @router.get("/ai-summaries", response_model=List[AiSummary])
 async def get_ai_summaries():
     cache_key = f"summaries_{datetime.now(tz=timezone.utc).date()}"
-    if cache_key not in _cache:
+    if cache_key not in _cache or not _cache[cache_key]:
         articles = await fetch_all_articles()
-        _cache[cache_key] = await generate_daily_summary(articles)
+        summaries = await generate_daily_summary(articles)
+        if summaries:
+            _cache[cache_key] = summaries
+        else:
+            return []
     return _cache[cache_key]
 
 

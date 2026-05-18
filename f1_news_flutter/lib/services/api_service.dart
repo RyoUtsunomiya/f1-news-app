@@ -86,7 +86,7 @@ class ApiService extends ChangeNotifier {
     try {
       final response = await http
           .get(Uri.parse('$_baseUrl/ai-summaries'))
-          .timeout(const Duration(seconds: 45));
+          .timeout(const Duration(seconds: 90));
       if (response.statusCode == 200) {
         final List<dynamic> data =
             json.decode(utf8.decode(response.bodyBytes)) as List;
