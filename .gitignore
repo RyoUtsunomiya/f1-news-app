@@ -5,6 +5,7 @@ backend/**/__pycache__/
 backend/.env
 
 # Flutter
+f1_news_flutter/android/key.properties
 f1_news_flutter/.dart_tool/
 f1_news_flutter/.flutter-plugins
 f1_news_flutter/.flutter-plugins-dependencies

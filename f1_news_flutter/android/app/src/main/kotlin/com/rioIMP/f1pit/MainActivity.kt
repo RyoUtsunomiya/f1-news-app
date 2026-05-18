@@ -1,4 +1,4 @@
-package com.example.f1_news_app
+package com.rioIMP.f1pit
 
 import io.flutter.embedding.android.FlutterActivity
 

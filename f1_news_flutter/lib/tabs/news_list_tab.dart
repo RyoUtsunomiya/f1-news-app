@@ -67,16 +67,16 @@ class _NewsListTabState extends State<NewsListTab>
       );
     }
 
-    // 5記事ごとに広告を挿入
+    // 8記事ごとに広告を挿入
     final articles = api.articles;
-    final itemCount = articles.length + (articles.length ~/ 5);
+    final itemCount = articles.length + (articles.length ~/ 8);
 
     return ListView.builder(
       padding: const EdgeInsets.only(top: 4, bottom: 20),
       itemCount: itemCount,
       itemBuilder: (context, index) {
-        final adIndex = index ~/ 6;
-        final isAdSlot = index > 0 && index % 6 == 5;
+        final adIndex = index ~/ 9;
+        final isAdSlot = index > 0 && index % 9 == 8;
 
         if (isAdSlot) return const AdBannerWidget(isMedium: true);
 

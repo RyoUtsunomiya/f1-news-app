@@ -32,16 +32,22 @@ class _AiSummaryTabState extends State<AiSummaryTab>
     super.build(context);
     return Consumer<ApiService>(
       builder: (context, api, _) {
-        return RefreshIndicator(
-          onRefresh: api.fetchAiSummaries,
-          color: AppTheme.f1Red,
-          child: CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(child: _Header()),
-              const SliverToBoxAdapter(child: AdBannerWidget()),
-              _buildContent(api),
-            ],
-          ),
+        return Column(
+          children: [
+            Expanded(
+              child: RefreshIndicator(
+                onRefresh: api.fetchAiSummaries,
+                color: AppTheme.f1Red,
+                child: CustomScrollView(
+                  slivers: [
+                    SliverToBoxAdapter(child: _Header()),
+                    _buildContent(api),
+                  ],
+                ),
+              ),
+            ),
+            const AdBannerWidget(),
+          ],
         );
       },
     );
