@@ -8,11 +8,6 @@ from models.article import Article
 
 RSS_SOURCES = [
     {
-        "url": "https://f1-gate.com/feed/",
-        "source": "f1gate",
-        "display_name": "F1-Gate.com",
-    },
-    {
         "url": "https://www.as-web.jp/feed",
         "source": "asweb",
         "display_name": "Auto Sport Web",
